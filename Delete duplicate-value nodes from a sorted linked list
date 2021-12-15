@@ -1,0 +1,10 @@
+def removeDuplicates(l):
+    # Write your code here
+    if(l==None or l.next==None):
+        return None
+    n=removeDuplicates(l.next)
+    if(l.next!=None):
+        if(l.data==l.next.data):
+            l.next=l.next.next
+        
+    return l
