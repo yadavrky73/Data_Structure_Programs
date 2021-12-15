@@ -1,0 +1,13 @@
+
+def getNode(l, p):
+    # Write your code here\
+    a=l
+    b=l
+    i=0
+    while(i<p):
+        a=a.next
+        i+=1
+    while(a.next!=None):
+        a=a.next
+        b=b.next
+    return b.data
