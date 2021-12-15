@@ -1,0 +1,10 @@
+def findMergeNode(h1, h2):
+    a=set()
+    while(h1!=None):
+        a.add(h1)
+        h1=h1.next
+    while(h2!=None):
+        if h2 in a:
+            return h2.data
+        else:
+            h2=h2.next
