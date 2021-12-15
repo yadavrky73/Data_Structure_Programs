@@ -1,0 +1,24 @@
+def compare_lists(llist1, llist2):
+    while(llist1 or llist2):
+        if (llist1!=None and llist2!=None and llist1.data!=llist2.data):
+            return '0'
+        llist1=llist1.next
+        llist2=llist2.next
+    return '1'
+
+#2
+def mergeLists(h1, h2):
+    if (h1==None and h2==None):
+        return None
+    if(h1!=None and h2==None):
+        return h1
+    if(h1==None and h2!=None):
+        return h2
+    s=None
+    if h1.data>h2.data:
+        s=h2
+        s.next=mergeLists(h1,h2.next)
+    else:
+        s=h1
+        s.next=mergeLists(h1.next,h2)
+    return s
