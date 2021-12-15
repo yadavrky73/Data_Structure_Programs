@@ -1,0 +1,10 @@
+def reverse(head):
+    p=head
+    if(p.next==None):
+        head=p
+        return head
+    reverse(p.next)
+    
+    q=p.next
+    q.next=p
+    p.next=Null
