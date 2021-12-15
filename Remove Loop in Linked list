@@ -1,0 +1,19 @@
+def removeLoop(self, head):
+    a=head
+    b=head
+
+    while (a!=None and b!=None and a.next!=None):
+        b=b.next
+        a=a.next.next
+        if (a==b):
+            break
+    if(b==head):
+        while(a.next!=b):
+            a=a.next
+        a.next=None
+    elif (b==a):
+        b=head
+        while(b.next!=a.next):
+            b=b.next
+            a=a.next
+        a.next=None
