@@ -1,0 +1,25 @@
+class Solution:
+    #Function to insert a node at the beginning of the linked list.
+    def insertAtBegining(self,head,x):
+        # code here 
+        t=Node(x)
+        if(head==None):
+            return t
+        t.next=head
+        head=t
+        return head
+    
+    #Function to insert a node at the end of the linked list.
+    def insertAtEnd(self,head,x):
+        # code here 
+        t=Node(x)
+        if (head==None):
+            return t
+        c=head
+        while(c.next!=None):
+            c=c.next
+        c.next=t
+        
+        return head
+
+
