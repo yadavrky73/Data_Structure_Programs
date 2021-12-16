@@ -1,0 +1,11 @@
+def deleteEnd(self,head):
+        # code here 
+        
+        if (head==None):
+            return None
+        c=head
+        while(c.next!=None):
+            c=c.next
+        c=Null
+        
+        return head
