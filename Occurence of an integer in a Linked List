@@ -1,0 +1,10 @@
+class Solution:
+    def count(self, head, search_for):
+        # Code here
+        c=0
+        h=head
+        while(h!=None):
+            if (h.data==search_for):
+                c+=1
+            h=h.next
+        return c
