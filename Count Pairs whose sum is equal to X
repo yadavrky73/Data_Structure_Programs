@@ -1,0 +1,20 @@
+class Solution:
+    def countPair(self,h1,h2,n1,n2,x):
+       
+        t1=h1
+        t2=h2
+        s1=set()
+        s2=set()
+        while(t1!=None):
+            s1.add(t1.data)
+            t1=t1.next
+        while(t2!=None):
+            s2.add(t2.data)
+            t2=t2.next
+        c=0
+        for i in s1:
+            a=x-i
+            if a in s2:
+                c+=1
+        return c
+        
