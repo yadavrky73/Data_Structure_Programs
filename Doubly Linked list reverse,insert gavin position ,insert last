@@ -1,0 +1,78 @@
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.prev=None
+        self.next=None
+
+class linklist:
+    def __init__(self):
+        self.start=None
+        
+    def insertatlast(self,data):
+        newnode=node(data)
+        
+        if self.start==None:
+            self.start=newnode
+
+        else:
+            temp=self.start
+            while temp.next!=None:
+                temp=temp.next
+            
+            temp.next=newnode
+            newnode.prev=temp
+
+    def viewlist(self):
+        temp=self.start
+        while temp!=None:
+            print(temp.data,end=' ')
+            temp=temp.next
+
+    def viewreverse(self):
+        temp=self.start
+        while temp.next!=None:
+            temp=temp.next
+
+        while temp!=None:
+            print(temp.data,end=' ')
+            temp=temp.prev
+
+    def insertaftergivenpos(self,pos,data):
+        newnode=node(data)
+        if pos==1:
+            newnode.next=self.start
+            self.start.prev=newnode
+            self.start=newnode
+
+        else:
+            temp=self.start
+            p=2
+            while p!=pos:
+                p+=1
+                temp=temp.next
+
+            newnode.next=temp.next
+            temp.next.prev=newnode
+            temp.next=newnode
+            newnode.prev=temp
+            #temp.next.next.prev=newnode
+            
+        
+llist=linklist()
+llist.insertatlast(1)
+llist.insertatlast(2)
+llist.insertatlast(3)
+llist.insertatlast(4)
+llist.insertatlast(5)
+print('link list = ')
+llist.viewlist()
+print()
+print('link list in reverse = ')
+llist.viewreverse()
+print()
+llist.insertaftergivenpos(4,7)
+print('link list = ')
+llist.viewlist()
+print()
+print('link list in reverse = ')
+llist.viewreverse()
