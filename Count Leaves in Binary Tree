@@ -1,0 +1,11 @@
+def countLeaves(root):
+    # Code here
+    if root is None:
+        return None
+    t=root
+    if(t.left is None and t.right is None):
+        return 1
+    else:
+        a=countLeaves(t.left)
+        b=countLeaves(t.right)
+    return a+b
