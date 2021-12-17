@@ -1,0 +1,9 @@
+def sumOfLastN_Nodes(head,n):
+    #function should return sum of last n nodes
+    a=[]
+    aa=head
+    while(aa!=None):
+        a.append(aa.data)
+        aa=aa.next
+    a=a[::-1]
+    return sum(a[:n])
