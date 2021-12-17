@@ -1,0 +1,11 @@
+class Solution:
+    
+    def mirror(self,root):
+        # Code here
+        if root==None:
+            return None
+        self.mirror(root.left)
+        self.mirror(root.right)
+        t=root.left
+        root.left=root.right
+        root.right=t
