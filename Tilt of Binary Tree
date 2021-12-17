@@ -1,0 +1,15 @@
+def tilt(root,arr):
+    if root==None:
+        return 0
+    else:
+        l=tilt(root.left,arr)
+        r=tilt(root.right,arr)
+        arr[0]+=abs(l-r)
+        return l+r+root.data
+class Solution:
+    
+    def tiltTree(self,root):
+        #code here
+        arr=[0]
+        tilt(root,arr)
+        return arr[0]
