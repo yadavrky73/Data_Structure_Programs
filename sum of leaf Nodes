@@ -6,3 +6,13 @@ def sumLeaf(root):
     if t.left is None and t.right is None:
         return t.data
     return sumLeaf(root.left)+sumLeaf(root.right)
+   
+   
+   #  odd even level difference
+class Solution:
+    def getLevelDiff(self, root):
+        # Code here
+        if root==None:
+            return 0
+        else:
+            return root.data-self.getLevelDiff(root.left)-self.getLevelDiff(root.right)
