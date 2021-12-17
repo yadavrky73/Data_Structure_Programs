@@ -1,0 +1,8 @@
+def sumLeaf(root):
+    # code here
+    if root==None:
+        return 0
+    t=root
+    if t.left is None and t.right is None:
+        return t.data
+    return sumLeaf(root.left)+sumLeaf(root.right)
