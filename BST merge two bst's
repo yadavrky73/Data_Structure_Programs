@@ -1,0 +1,24 @@
+class Solution:
+    def summ1(root1,l1):
+        if root1:
+            self.merge(root1.left,l1)
+            l1.append(root1.data)
+            self.merge(root1.right,l1)
+    def summ2(root2,l2):
+        if root1:
+            self.merge(root2.left,l2)
+            l2.append(root2.data)
+            self.merge(root2.right,l2)
+
+    
+    def merge(self, root1, root2):
+        #code here.
+        l1=[]
+        l2=[]
+        summ1(root1.l1)
+        summ2(root2,l2)
+        l=l1+l2
+        l=sorted(l)
+        #return l
+        for i in l:
+            print(i,end=" ")
