@@ -1,0 +1,18 @@
+def summ(root,k,a):
+    if root==None:
+        return None
+    summ(root.left,k,a)
+    a.append(root.key)
+    
+    summ(root.right,k,a)
+    
+
+def sum(root, k):
+    # code here
+    a=[]
+    summ(root,k,a)
+    s=0
+    for i in range(k):
+        s+=a[i]
+    return s
+        
