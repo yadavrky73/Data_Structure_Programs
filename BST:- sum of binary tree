@@ -1,0 +1,13 @@
+def summ(root,l):
+    if root==None:
+        return None
+    else:
+        l[0]+=root.data
+        summ(root.left,l)
+        summ(root.right,l)
+def sumBT(root):
+    #code
+    l=[0]
+    summ(root,l)
+    return l[0]
+    
