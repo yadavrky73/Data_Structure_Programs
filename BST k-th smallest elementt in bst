@@ -1,0 +1,16 @@
+class Solution:
+    # Return the Kth smallest element in the given BST 
+   
+    def KthSmallestElement(self, root, k): 
+        #code here.
+        ans=[]
+        def inorder(root,ans):
+            if root is None:
+                return
+            inorder(root.left,ans)
+            ans.append(root.data)
+            inorder(root.right,ans)
+        inorder(root,ans)
+        if k<=len(ans):
+            return ans[k-1]
+        return -1
