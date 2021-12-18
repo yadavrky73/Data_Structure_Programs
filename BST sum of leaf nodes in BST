@@ -1,0 +1,13 @@
+def summ(root,l):
+    if root==None:
+        return None
+    
+    if root.left==None and root.right==None:
+        l.append(root.data)
+    summ(root.left,l)
+    summ(root.right,l)
+def sumOfLeafNodes(root):
+    #Your code here
+    l=[]
+    summ(root,l)
+    return sum(l)
