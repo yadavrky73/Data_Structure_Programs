@@ -1,0 +1,12 @@
+class Solution:
+    def colName (self, n):
+        # your code here
+        s=""
+        while(n):
+            if n%26==0:
+                s=str("Z")+s
+                n=n//26-1
+            else:
+                s=chr(n%26+ord("A")-1)+s
+                n=n//26
+        return s
