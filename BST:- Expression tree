@@ -1,0 +1,17 @@
+class Solution:
+    # function should return an integer denoting the required answer
+    def evalTree(self, root):
+        if (root.left==None and root.right==None):
+            return root.data
+        left=int(self.evalTree(root.left))
+       
+        right=int(self.evalTree(root.right))
+        if root.data=="+":
+            
+            return left+right
+        elif root.data=="-":
+            return left-right
+        elif root.data=="*":
+            return left*right
+        else:
+            return  int(left/right)
